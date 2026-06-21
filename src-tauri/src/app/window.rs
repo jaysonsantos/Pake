@@ -297,6 +297,7 @@ fn build_window(
         .initialization_script(include_str!("../inject/event.js"))
         .initialization_script(include_str!("../inject/style.js"))
         .initialization_script(include_str!("../inject/theme_refresh.js"))
+        .initialization_script(include_str!("../inject/webauthn.js"))
         .initialization_script(include_str!("../inject/auth.js"))
         .initialization_script(include_str!("../inject/custom.js"));
 
