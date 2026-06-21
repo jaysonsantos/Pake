@@ -19,8 +19,8 @@ const WEBKIT_DISABLE_COMPOSITING_MODE: &str = "WEBKIT_DISABLE_COMPOSITING_MODE";
 
 use app::{
     invoke::{
-        clear_dock_badge, download_file, increment_dock_badge, send_notification,
-        set_dock_badge, set_dock_badge_label, update_theme_mode,
+        clear_dock_badge, download_file, increment_dock_badge, send_notification, set_dock_badge,
+        set_dock_badge_label, update_theme_mode,
     },
     setup::{set_global_shortcut, set_system_tray},
     window::{open_additional_window_safe, set_window, MultiWindowState},
@@ -133,6 +133,7 @@ pub fn run_app() {
         .plugin(tauri_plugin_http::init())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_notification::init())
+        .plugin(tauri_plugin_webauthn::init())
         .plugin(tauri_plugin_opener::init()); // Add this
 
     // Only add single instance plugin if multiple instances are not allowed
